@@ -15,6 +15,7 @@ public class Producto {
 	private Integer id;
 	private String nombre;
 	private String descripcion;
+	private String genero;
 	private String imagen;
 	private double precio;
 	private int cantidad;
@@ -26,17 +27,22 @@ public class Producto {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Producto(Integer id, String nombre, String descripcion, String imagen, double precio, int cantidad,
-			Usuario usuario) {
+	
+
+	public Producto(Integer id, String nombre, String descripcion, String genero, String imagen, double precio,
+			int cantidad, Usuario usuario) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
+		this.genero = genero;
 		this.imagen = imagen;
 		this.precio = precio;
 		this.cantidad = cantidad;
 		this.usuario = usuario;
 	}
+
+
 
 	public Integer getId() {
 		return id;
@@ -96,12 +102,25 @@ public class Producto {
 		this.usuario = usuario;
 	}
 
+	
+
+	public String getGenero() {
+		return genero;
+	}
+
+
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+
+
 	@Override
 	public String toString() {
-		return "Producto [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", imagen=" + imagen
-				+ ", precio=" + precio + ", cantidad=" + cantidad + "]";
+		return "Producto [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", genero=" + genero
+				+ ", imagen=" + imagen + ", precio=" + precio + ", cantidad=" + cantidad + ", usuario=" + usuario + "]";
 	}
-	
-	
+
 
 }
