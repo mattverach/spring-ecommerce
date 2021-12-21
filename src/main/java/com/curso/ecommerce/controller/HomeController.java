@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -179,6 +180,14 @@ public class HomeController {
 		 
 		 
 		return "redirect:/";
+	}
+	
+	@PostMapping("/search")
+	public String searchProduct(@RequestParam String nombre, Model model) {
+		log.info("Nombre del producto: {}", nombre);
+		List<Producto> productos= productoService.findAll().stream().filter(p -> p.getNombre().contains(nombre)).collect(Collectors.toList());
+		model.addAttribute("productos", productos);
+		return "usuario/home";
 	}
 
 }
