@@ -26,15 +26,20 @@
   
   <div th:include="usuario/template_usuario.html::header-user" th:unless="${sesion==null}"></div >
 
-    <!-- Page Content -->
-    <div class="container">
+   
 
       <!-- Jumbotron Header -->
-      <header class="jumbotron my-4">
-        <h1 class="display-3">Bienvenido a Spring Ecommerce 2021</h1>
-        <p class="lead">Tu tienda de productos en Línea</p>
-      </header>
+      <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Bienvenido! &#128075; </h1>
+    <p class="lead">Ofrecemos un extenso catalogo al mejor precio siendo destacados como la librería de referencia obligada para quienes buscan tanto el último bestseller como un texto escolar o algún título difícil de conseguir.</p>
+  </div>
+</div>
+      
 
+ <!-- Page Content -->
+ <div class="container">
+     
       <!-- Page Features -->
       <div class="row text-center">
 
@@ -43,7 +48,7 @@
             <img class="card-img-top" th:src="@{/images/{img} (img=${producto.imagen})}" alt="">
             <div class="card-body">
               <p class="card-text" th:text="${producto.nombre}"></p>
-              <b><p class="card-text" th:text="'$ ' + ${producto.precio}"></p></b>
+              <p class="card-text text-info " th:text="'$ ' + ${producto.precio}"></p>
             </div>
             <div class="card-footer">
               <a th:href="@{/productohome/{id} (id=${producto.id})}" class="btn btn-success">Ver producto</a>
